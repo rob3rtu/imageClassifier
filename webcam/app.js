@@ -40,6 +40,12 @@ function gotResults(error, results) {
        // console.log(results);
 
         let ans = results[0].label;
+        for(let i = 0; i < ans.length; i++) {
+          if( ans[i] == ',' ) {
+           ans = ans.slice(0, i);
+            break;
+          }
+        }
         //console.log(ans);
 
         text.innerHTML = ans;
